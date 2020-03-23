@@ -27,7 +27,7 @@ class Dictaphone extends Component {
     // Setting state for the SpeechRec, all speeches and each individual sentence before submit
     this.state = {
       listening: false,
-      speeches: [],
+      // speeches: [],
       sentence: ""
     };
 
@@ -127,7 +127,7 @@ class Dictaphone extends Component {
   submitTranscripts(event) {
     event.preventDefault();
     if (this.state.sentence) {
-      API.saveSpeech({
+      API.saveSentence({
         sentence: this.state.sentence
       }).catch(err => console.log(err));
     }

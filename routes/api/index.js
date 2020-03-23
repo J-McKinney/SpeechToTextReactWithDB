@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const speechRoutes = require("./speeches");
+const sentenceRoutes = require("./sentences");
 
-// Speech routes
-router.use("/speeches", speechRoutes);
+// Sentence routes
+router.use("/sentences", sentenceRoutes);
 
 module.exports = router;
