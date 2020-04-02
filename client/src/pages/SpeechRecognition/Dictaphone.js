@@ -27,7 +27,6 @@ class Dictaphone extends Component {
     // Setting state for the SpeechRec, all speeches and each individual sentence before submit
     this.state = {
       listening: false,
-      // speeches: [],
       sentence: ""
     };
 
@@ -49,23 +48,23 @@ class Dictaphone extends Component {
   }
 
   handleListen() {
-    // console.log("listening?", this.state.listening);
+    console.log("listening?", this.state.listening);
     if (this.state.listening) {
       recognition.start();
       recognition.onend = () => {
-        // console.log("...continue listening...");
+      //   console.log("...continue listening...");
         recognition.start();
       };
     } else {
       recognition.stop();
       recognition.onend = () => {
-        // console.log("Stopped listening per click");
+        console.log("Stopped listening per click");
       };
     }
 
-    recognition.onstart = () => {
-      // console.log("Listening!");
-    };
+    // recognition.onstart = () => {
+    //   console.log("Listening!");
+    // };
 
     // Interim and final transcript are diplayed on the screen
     finalTranscript = "";
@@ -91,7 +90,7 @@ class Dictaphone extends Component {
       if (stopCmd[0] === "stop" && stopCmd[1] === "listening") {
         recognition.stop();
         recognition.onend = () => {
-          // console.log("Stopped listening per command");
+          console.log("Stopped listening per command");
           const finalText = transcriptArr.slice(0, -3).join(" ");
           document.getElementById("finalTranscript").innerHTML = finalText;
         };
@@ -103,7 +102,7 @@ class Dictaphone extends Component {
     //-----------------------------------------------------------------------
 
     recognition.onerror = event => {
-      // console.log("Error occurred in recognition: " + event.error);
+      console.log("Error occurred in recognition: " + event.error);
     };
   }
 
@@ -112,7 +111,7 @@ class Dictaphone extends Component {
     document.getElementById("interimTranscript").innerHTML = interimTranscript =
       "";
     document.getElementById("finalTranscript").innerHTML = finalTranscript = "";
-    // console.log("All Records Cleared");
+    console.log("All Records Cleared");
   }
 
   // Handles updating component state when the user types into the input field
