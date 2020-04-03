@@ -5,7 +5,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import API from "../../utils/API";
-import axios from "axios";
 import "./Dictaphone.css";
 
 //------------------------SPEECH RECOGNITION-----------------------------
@@ -63,6 +62,7 @@ class Dictaphone extends Component {
       };
     }
 
+    // this 2 go into the prototype
     // recognition.onstart = () => {
     //   console.log("Listening!");
     // };
