@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import API from "../../utils/API";
+import axios from "axios";
 import "./Dictaphone.css";
 
 //------------------------SPEECH RECOGNITION-----------------------------
